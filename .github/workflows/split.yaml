@@ -31,7 +31,6 @@ jobs:
                 if: "!startsWith(github.ref, 'refs/tags/')"
                 uses: "liarco/monorepo-split-github-action@issue-20"
                 with:
-                    branch: master
                     # ↓ split "packages/easy-coding-standard" directory
                     package_directory: 'packages/${{ matrix.package.local_path }}'
 
@@ -48,7 +47,6 @@ jobs:
                 if: "startsWith(github.ref, 'refs/tags/')"
                 uses: "liarco/monorepo-split-github-action@issue-20"
                 with:
-                    branch: master
                     tag: ${GITHUB_REF#refs/tags/}
 
                     # ↓ split "packages/easy-coding-standard" directory
