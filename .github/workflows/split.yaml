@@ -20,7 +20,7 @@ jobs:
                 # define package to repository map
                 package:
                     -
-                        local_path: 'package'
+                        local_path: 'split-action-test-destination'
                         split_repository: 'split-action-test-destination'
 
         steps:
