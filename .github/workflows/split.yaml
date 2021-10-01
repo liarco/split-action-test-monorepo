@@ -29,7 +29,7 @@ jobs:
             # no tag
             -
                 if: "!startsWith(github.ref, 'refs/tags/')"
-                uses: "liarco/monorepo-split-github-action@issue-20"
+                uses: "liarco/monorepo-split-github-action@init-empty-repo"
                 with:
                     # ↓ split "packages/easy-coding-standard" directory
                     package_directory: 'packages/${{ matrix.package.local_path }}'
@@ -45,7 +45,7 @@ jobs:
             # with tag
             -
                 if: "startsWith(github.ref, 'refs/tags/')"
-                uses: "liarco/monorepo-split-github-action@issue-20"
+                uses: "liarco/monorepo-split-github-action@init-empty-repo"
                 with:
                     tag: ${GITHUB_REF#refs/tags/}
 
